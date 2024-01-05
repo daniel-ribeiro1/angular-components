@@ -1,0 +1,14 @@
+input {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+
+  transition: border-color 0.25s;
+
+  &:focus {
+    outline-color: blue;
+  }
+
+  &.ng-touched.ng-invalid {
+    border-color: red;
+  }
+}
