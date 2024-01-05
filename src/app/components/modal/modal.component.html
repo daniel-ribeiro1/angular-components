@@ -1,0 +1,7 @@
+@if (isOpen()) {
+<div class="modal">
+  <div #modal class="modal__card" [ngStyle]="modalStyle">
+    <ng-content />
+  </div>
+</div>
+}
