@@ -1,0 +1,29 @@
+<div class="radio" [class.disabled]="_formControl.disabled">
+  <div
+    class="radio__icon"
+    [style]="{ width: _size, height: _size }"
+    (click)="radio.click()"
+  >
+    <app-icon
+      _base="bi"
+      _size="100%"
+      _color="green"
+      [_name]="checkedIcon"
+      [style]="{ opacity: radio.checked ? 1 : 0 }"
+    />
+  </div>
+
+  @if (_label) {
+  <span class="radio__label" (click)="radio.click()">{{ _label }}</span>
+  }
+</div>
+
+<input
+  #radio
+  type="radio"
+  [id]="_id"
+  [name]="_name"
+  [value]="_value"
+  [hidden]="true"
+  [formControl]="_formControl"
+/>

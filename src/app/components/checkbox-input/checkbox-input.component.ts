@@ -12,10 +12,10 @@ import { InputComponent } from '@components/input/input.component';
   styleUrl: './checkbox-input.component.scss',
 })
 export class CheckboxInputComponent {
-  @Input() _id?: string;
+  @Input() _id = '';
   @Input() _label?: string;
-  @Input() _name?: string;
-  @Input({ transform: (size: number) => `${size}rem` }) _size = '1rem';
+  @Input() _name = '';
+  @Input() _size = '1rem';
   @Input({ required: true }) _formControl!: FormControl<boolean>;
 
   readonly checkedIcon = 'bi-check';

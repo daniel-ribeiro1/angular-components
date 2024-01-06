@@ -1,0 +1,23 @@
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+
+    .radio {
+      &__icon {
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    border: 0.0625rem solid #444;
+    border-radius: 50%;
+    padding: 0.125rem;
+  }
+}

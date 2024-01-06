@@ -7,7 +7,9 @@
     <app-icon _base="bi" [_name]="_formControl.value ? checkedIcon : ''" />
   </div>
 
+  @if (_label) {
   <span class="checkbox__label" (click)="checkbox.click()">{{ _label }}</span>
+  }
 </div>
 
 <input
