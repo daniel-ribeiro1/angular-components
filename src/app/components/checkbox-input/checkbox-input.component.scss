@@ -1,0 +1,22 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+
+    .checkbox {
+      &__icon {
+        background-color: #d8d8d8;
+      }
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+    border: 0.0625rem solid #444;
+    border-radius: 0.25rem;
+  }
+}

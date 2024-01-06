@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class IconComponent {
   @Input({ required: true }) _base!: string;
   @Input({ required: true }) _name!: string;
-  @Input({ transform: (size: number) => `${size}rem` }) size = '1rem';
+  @Input({ transform: (size: number) => `${size}rem` }) _size = '1rem';
+  @Input() _color = 'inherit'
 }
