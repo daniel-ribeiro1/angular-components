@@ -1,9 +1,27 @@
-<input
-  [id]="_id"
-  [name]="_name"
-  [type]="_type"
-  [placeholder]="_placeholder"
-  [formControl]="_formControl"
-  [autocomplete]="_autoComplete"
-  [autoFocus]="_autoFocus"
-/>
+<div class="input">
+  <!-- Padding: icon size + 0.5rem -->
+  <input
+    [id]="_id"
+    [name]="_name"
+    [type]="_type"
+    [placeholder]="_placeholder"
+    [formControl]="_formControl"
+    [autocomplete]="_autoComplete"
+    [autoFocus]="_autoFocus"
+    [style]="
+      _iconPosition === 'right'
+        ? { paddingRight: '1.5rem' }
+        : { paddingLeft: '1.5rem' }
+    "
+  />
+
+  @if (_icon) {
+  <app-icon
+    _base="bi"
+    [_name]="_icon"
+    [style]="
+      _iconPosition === 'right' ? { right: '0.5rem' } : { left: '0.5rem' }
+    "
+  />
+  }
+</div>

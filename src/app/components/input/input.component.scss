@@ -1,4 +1,4 @@
-// Caso esse reset já exista globalmente no projeto, 
+// Caso esse reset já exista globalmente no projeto,
 // remova esse primeiro bloco de código.
 * {
   margin: 0;
@@ -6,18 +6,29 @@
   box-sizing: border-box;
 }
 
-input {
-  width: 100%;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
+.input {
+  position: relative;
 
-  transition: border-color 0.25s;
+  input {
+    width: 100%;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
 
-  &:focus {
-    outline-color: blue;
+    transition: border-color 0.25s;
+
+    &:focus {
+      outline-color: blue;
+    }
+
+    &.ng-touched.ng-invalid {
+      border-color: red;
+    }
   }
 
-  &.ng-touched.ng-invalid {
-    border-color: red;
+  app-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
 }
