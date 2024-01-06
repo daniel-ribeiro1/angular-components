@@ -1,4 +1,13 @@
+// Caso esse reset já exista globalmente no projeto, 
+// remova esse primeiro bloco de código.
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 input {
+  width: 100%;
   padding: 0.25rem;
   border-radius: 0.25rem;
 

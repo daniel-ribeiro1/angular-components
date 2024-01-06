@@ -14,9 +14,9 @@ export class InputComponent {
   @Input({ required: true }) _formControl!: FormControl<any>;
 
   @Input() _id?: string;
-  @Input() _placeholder?: string;
   @Input() _name?: string;
+  @Input() _autoFocus?: boolean;
   @Input() _type = 'text';
   @Input() _autoComplete = 'off';
-  @Input() _autoFocus?: boolean;
+  @Input() _placeholder = '';
 }
