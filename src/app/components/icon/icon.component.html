@@ -1,1 +1,13 @@
-<i [style]="{ fontSize: _size, color: _color }" [class]="[_base, _name]"></i>
+<div
+  [style]="{
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: '0.5rem',
+    flexDirection: _labelPosition === 'left' ? 'row' : 'row-reverse'
+  }"
+>
+  @if (_label) {
+  <label>{{ _label }}</label>
+  }
+  <i [style]="{ fontSize: _size, color: _color }" [class]="[_base, _name]"></i>
+</div>

@@ -1,0 +1,118 @@
+<div class="table-container">
+  <table [style]="{ width: _width, minWidth: _minWidth, maxWidth: _maxWidth }">
+    <thead>
+      <tr>
+        @for (head of _config.head; track $index) {
+          @switch (head.type) { 
+            @case (cellTypeEnum.TEXT) {
+              <th 
+                [class]="head.class" 
+                [style]="head.style"
+                [colSpan]="head.colSpan || 1"
+              >
+                {{ head.text }}
+              </th>
+            } 
+            @case (cellTypeEnum.CHECKBOX) {
+              <th 
+                [class]="head.class" 
+                [style]="head.style" 
+              >
+                <app-checkbox-input
+                  [_id]="head.id"
+                  [_name]="head.name || ''"
+                  [_label]="head.label"
+                  [_formControl]="head.control"
+                  (click)="!!head.onClick ? head.onClick(head.control.value) : []"
+                />
+              </th>
+            } @case (cellTypeEnum.RADIO) {
+              <th 
+                [class]="head.class" 
+                [style]="head.style"
+              >
+                <app-radio-input
+                  [_id]="head.id"
+                  [_name]="head.name || ''"
+                  [_label]="head.label"
+                  [_formControl]="head.control"
+                  [_name]="head.name"
+                  [_value]="head.value"
+                  (click)="!!head.onClick ? head.onClick() : []"
+                />
+              </th>
+            } @case (cellTypeEnum.ICON) {
+              <th 
+                [class]="head.class" 
+                [style]="head.style"
+              >
+                <app-icon
+                  [style]="{ cursor: 'pointer' }"
+                  _base="bi"
+                  [_name]="head.icon"
+                  [_label]="head.label"
+                  [_labelPosition]="head.labelPosition || 'left'"
+                  (click)="!!head.onClick ? head.onClick() : []"
+                />
+              </th>
+            } 
+          } 
+        }
+      </tr>
+    </thead>
+    <tbody>
+      @for (row of _config.rows; track $index) {
+       <tr>
+        @for (col of row; track $index) {
+          @switch (col.type) { 
+            @case (cellTypeEnum.TEXT) {
+              <td 
+                [class]="col.class" 
+                [style]="col.style"
+                [colSpan]="col.colSpan || 1"
+                [rowSpan]="col.rowSpan || 1"
+              >
+              {{ col.text }}
+            </td>
+            } 
+            @case (cellTypeEnum.CHECKBOX) {
+              <td [class]="col.class" [style]="col.style">
+                <app-checkbox-input
+                  [_id]="col.id"
+                  [_name]="col.name || ''"
+                  [_label]="col.label"
+                  [_formControl]="col.control"
+                  (click)="!!col.onClick ? col.onClick(col.control.value) : []"
+                />
+              </td>
+            } @case (cellTypeEnum.RADIO) {
+              <td [class]="col.class" [style]="col.style">
+                <app-radio-input
+                  [_id]="col.id"
+                  [_name]="col.name || ''"
+                  [_label]="col.label"
+                  [_formControl]="col.control"
+                  [_name]="col.name"
+                  [_value]="col.value"
+                  (click)="!!col.onClick ? col.onClick() : []"
+                />
+              </td>
+            } @case (cellTypeEnum.ICON) {
+              <td [class]="col.class" [style]="col.style">
+                <app-icon
+                  [style]="{ cursor: 'pointer' }"
+                  _base="bi"
+                  [_name]="col.icon"
+                  [_label]="col.label"
+                  [_labelPosition]="col.labelPosition || 'left'"
+                  (click)="!!col.onClick ? col.onClick() : []"
+                />
+              </td>
+            } 
+          } 
+        }
+       </tr>
+      }
+    </tbody>
+  </table>
+</div>

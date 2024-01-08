@@ -1,14 +1,17 @@
 <div class="checkbox" [class.disabled]="_formControl.disabled">
-  <div
-    class="checkbox__icon"
-    [style]="{ width: _size, height: _size }"
-    (click)="checkbox.click()"
-  >
-    <app-icon _base="bi" [_name]="_formControl.value ? checkedIcon : ''" />
+  <div class="checkbox__icon" [style]="{ width: _size, height: _size }">
+    <app-icon
+      _base="bi"
+      _size="100%"
+      _color="green"
+      [_name]="checkedIcon"
+      [style]="{ opacity: _formControl.value ? 1 : 0 }"
+      (click)="checkbox.click()"
+    />
   </div>
 
   @if (_label) {
-  <span class="checkbox__label" (click)="checkbox.click()">{{ _label }}</span>
+  <label class="checkbox__label" (click)="checkbox.click()">{{ _label }}</label>
   }
 </div>
 
@@ -19,4 +22,5 @@
   type="checkbox"
   [hidden]="true"
   [formControl]="_formControl"
+  (click)="$event.stopPropagation()"
 />

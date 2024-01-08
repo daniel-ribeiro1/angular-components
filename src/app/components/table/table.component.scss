@@ -1,0 +1,26 @@
+// Caso esse reset já exista globalmente no projeto,
+// remova esse primeiro bloco de código.
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.table-container {
+  overflow-x: auto;
+
+  table {
+    td, th {
+      padding: 0.5rem;
+    }
+  }
+
+  table,
+  th,
+  tr,
+  td {
+    text-align: start;
+    border: 0.0625rem solid #4444;
+    border-collapse: collapse;
+  }
+}
